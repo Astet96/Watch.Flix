@@ -1,0 +1,38 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    About
+{% endblock %}
+
+{% block main %}
+<div class="about">
+    <h1>App description:</h1>
+    <p>This app searches the IMdb database un order to reccomend a movie to watch.</p>
+    <h2>There are two search options:</h2>
+    <h4 class="a">1. Criteria Search: in which up to 8 criteria can be used to find a suitable movie/show to watch, these are:</h4>
+    <p class = "b">a. type: movie or tv series</p>
+    <p class = "b">b. period: decade from 1900 to 2020</p>
+    <p class = "b">c. genre</p>
+    <p class = "b">d. rating: 1 - 10 stars</p>
+    <p class = "b">e. actor *optional</p>
+    <p class = "b">f. director *optional</p>
+    <p class = "b">g. producer *optional</p>
+    <p class = "b">h. country</p>
+    <h4 class = "a">2: A random search that returns a title to watch</h4>
+
+    <h2>Results:</h2>
+    <p>The result page displays the name of the title as a link to the IMdb page
+    for that movie/show, as well as the associated poster (if any).</p>
+
+    <p>If no titles are found that satisfy the search criteria, then an apology is rendered.</p>
+
+    <p>Finally, there is a history tab, presenting the titles (as links to IMdb pages) of the most recent 10 search results.</p>
+
+    <h4>Additional python apps:</h4>
+    <p class = "a">csv_downloader.py - is used to download the IMdb TSV files</p>
+    <p class = "a">csv_db_converter.py - is used to convert the downloaded TSV diles into a SQLite3 database</p>
+    <p class = "a">pop_row.py - is used to create a new (lighter) database from the previously created one in order to shorten the search time</p>
+    <p class = "a">qry_constructor.py - has the SQLite3 query construction logic that powers the main search functionality</p>
+    <p class = "a">img.py - is used to retreive the associated title poster for display in the result page.</p>
+</div>
+{% endblock %}

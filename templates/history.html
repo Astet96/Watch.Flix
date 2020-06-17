@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    History
+{% endblock %}
+
+{% block main %}
+    {% for i in range(0,10,1) %}
+        {% if history[i] != None %}
+            <p class="link">
+                <a class="recon link" href="https://www.imdb.com/title/{{ history[i] }}/" target="_blank">{{ name_history[i] }}</a>
+            </p>
+        {% endif %}
+    {% endfor %}
+{% endblock %}

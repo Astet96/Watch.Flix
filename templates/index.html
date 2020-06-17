@@ -1,0 +1,73 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Search
+{% endblock %}
+
+{% block main %}
+
+{% for i in error %}
+    {% if i != None %}
+        <p class="err">{{ i }}</p>
+    {% endif %}
+{% endfor %}
+
+
+<form action="/" method="post">
+
+    <div class="btn-group btn-group-toggle" data-toggle="buttons">
+        <label class="btn btn-secondary active">
+          <input type="radio" name="type" id="movie" value="movie" checked> Movie
+        </label>
+        <label class="btn btn-secondary">
+          <input type="radio" name="type" id="series" value="series"> TV Series
+        </label>
+      </div>
+
+      <div>
+        <label id="period_label" for="year" style="display: inline-block;">Period: 1960's</label>
+      </div>
+    <div class="form-group">
+        <input oninput="prd()" id="period" type="range" name="year" class="custom-range" min="1900" max="2020" step="10" id="year">
+    </div>
+
+    <div class="form-group">
+        <select class="custom-select" name="genre">
+            <option selected>Genre</option>
+            {% for i in genre %}
+                <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <div>
+        <label id="star_label" for="customRange3" style="display: inline-block;">Rating: 5 stars</label>
+    </div>
+    <div class="form-group">
+        <input oninput="str()" id="star" type="range" name="rating" class="custom-range" min="0" max="10" step="1" id="rating">
+    </div>
+
+    <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="actor" placeholder="Actor" type="text">
+    </div>
+
+    <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="director" placeholder="Director" type="text">
+    </div>
+
+    <div class="form-group">
+        <input autocomplete="off" autofocus class="form-control" name="producer" placeholder="Producer" type="text">
+    </div>
+
+    <div class="form-group">
+        <select class="custom-select" name="region">
+            <option selected>Country</option>
+            {% for i in country %}
+                <option value="{{ i }}">{{ i }}</option>
+            {% endfor %}
+        </select>
+    </div>
+
+    <button class="btn btn-primary" type="submit">Find</button>
+</form>
+{% endblock %}

@@ -1,0 +1,17 @@
+{% extends "layout.html" %}
+
+{% block title %}
+    Recommendation
+{% endblock %}
+
+{% block main %}
+    <p class="recon">
+        You should watch:
+    </p>
+    <p class="link">
+        <a class="recon link" href="https://www.imdb.com/title/{{ movie }}/" target="_blank">{{ name }}</a>
+    </p>
+    <p>
+        <img src="{{ url }} ? {{ time }}" alt="{{ name }}">
+    </p>
+{% endblock %}
